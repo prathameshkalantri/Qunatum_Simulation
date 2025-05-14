@@ -15,24 +15,6 @@ The simulation is built with **Python**, **Flask**, and **NumPy**, and is design
 
 ---
 
-## 📁 Project Structure
-
-```
-├── app.py                      # Main Flask application with all routes
-├── classical_app.py           # Standalone classical RSA login demo (optional)
-├── quantum_hack.py            # Simulates factoring for quantum attack demo
-├── templates/
-│   ├── register.html          # Classical RSA register page
-│   ├── login.html             # Classical RSA login page
-│   ├── pq_register.html       # LWE-based register page
-│   ├── pq_login.html          # LWE-based login page
-│   ├── quantum_hack.html      # Quantum hacking demo interface
-├── users.db                   # SQLite database (auto-created on first run)
-└── README.md                  # This file
-```
-
----
-
 ## ▶️ How to Run the Simulation
 
 ### 1. **Install Dependencies**
@@ -47,8 +29,8 @@ pip install flask numpy
 
 Run the app with:
 
-```bash
-python app.py
+```
+bashFLASK_APP=app.py flask run
 ```
 
 Then open your browser and go to:
