@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Quantum-Safe Login</h1>
+    <form method="POST">
+        Username: <input type="text" name="username" required><br>
+        Password (number): <input type="number" name="password" required><br>
+        <input type="submit" value="Login">
+    </form>
+    {% if message %}<p>{{ message }}</p>{% endif %}
+    <p><a href="{{ url_for('quantum_hack') }}">Try Hacking This (Will Fail)</a></p>
+    {% if cipher_data %}
+    <div style="word-wrap: break-word;">
+        <h3>Ciphertext Details</h3>
+        <p>Encrypted Value: {{ cipher_data.encrypted }}</p>
+        <p>Public Vector (A): {{ cipher_data.A[:50] }}...</p>
+    </div>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Login</h1>
+    <form method="POST">
+        Username: <input type="text" name="username" required><br>
+        Password (number): <input type="number" name="password" required><br>
+        <input type="submit" value="Login">
+    </form>
+    {% if message %}<p>{{ message }}</p>{% endif %}
+    <p><a href="{{ url_for('quantum_hack') }}">Quantum Hack Demo</a></p>
+    <p>Try <a href="{{ url_for('pq_register') }}">Quantum-Safe Version</a></p>
+    {% if encrypted %}
+    <p>Current Session Encryption: {{ encrypted }}</p>
+    {% endif %}
+</body>
+</html>

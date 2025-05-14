@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Quantum RSA Hacking Demo</h1>
+    <form method="POST">
+        Public Key (n): <input type="number" name="n" value="{{ public_key[0] }}" required><br>
+        Public Key (e): <input type="number" name="e" value="{{ public_key[1] }}" required><br>
+        Ciphertext: <input type="number" name="ciphertext" required><br>
+        <input type="submit" value="Simulate Quantum Hack">
+    </form>
+    
+    {% if result %}
+        {% if result.error %}
+            <p style="color: red;">Error: {{ result.error }}</p>
+        {% else %}
+            <h2>Hacking Results:</h2>
+            <p>Prime factors: {{ result.p }} and {{ result.q }}</p>
+            <p>Calculated private key (d): {{ result.d }}</p>
+            <p>Decrypted password: {{ result.decrypted }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
